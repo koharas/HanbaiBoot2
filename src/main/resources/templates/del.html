@@ -10,7 +10,7 @@
 <p>以下を削除しますか？</p>
 
 <p>商品名：<span th:text="${shouhin.sname}"></span></p>
-<p>単価：<span th:text="${shouhin.sname}"></span>円</p>
+<p>単価：<span th:text="${shouhin.tanka}"></span>円</p>
 
 <form method="post" action="del">
 <input type="hidden" name="sid" th:value="${shouhin.sid}">
