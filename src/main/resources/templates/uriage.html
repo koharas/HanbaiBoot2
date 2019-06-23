@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>売上一覧</title>
+</head>
+<body>
+
+<h1><span th:text="${shouhin.sname}"></span> 売上一覧</h1>
+
+<table>
+<tr><th>日付</th><th>個数</th><th>金額</th></tr>
+
+<tr th:each="uriage: ${list}">
+	<td th:text="${#dates.format(uriage.hi,'yyyy/MM/dd')}"></td>
+	<td th:text="${uriage.kosu}"></td>
+	<td th:text="${shouhin.tanka * uriage.kosu}">円</td>
+</tr>
+</table>
+
+
+<h2>売り上げ追加</h2>
+
+<form method="post" action="uriage">
+個数：<input type="number" name="kosu"><br>
+<input type="hidden" name="sid" th:value="${shouhin.sid}">
+<input type="submit" value="追加">
+</form>
+
+</body>
+</html>

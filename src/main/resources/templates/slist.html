@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商品一覧</title>
+</head>
+<body>
+
+<h1>商品一覧</h1>
+
+<form method="post" action="slist">
+商品名：<input type="text" name="sname" ><br>
+単価：<input type="text" name="tanka" ><br>
+<input type="submit" value="追加">
+</form>
+
+<table>
+<tr><th>商品ID</th><th>商品名</th><th>単価</th></tr>
+
+<tr th:each="shouhin : ${list}">
+	<td th:text="${shouhin.sid}"></td>
+	<td th:text="${shouhin.sname}"></td>
+	<td th:text="${shouhin.tanka}">円</td>
+
+	<td><a th:href="|del?sid=${shouhin.sid}|">削除</a></td>
+	<td><a th:href="|update?sid=${shouhin.sid}|">変更</a></td>
+	<td><a th:href="|uriage?sid=${shouhin.sid}|">売上</a></td>
+</tr>
+</table>
+
+
+</body>
+</html>

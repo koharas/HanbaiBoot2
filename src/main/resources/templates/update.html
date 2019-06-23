@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>変更</title>
+</head>
+<body>
+<h1>変更</h1>
+
+<form method="post" action="update">
+<input type="hidden" name="sid" th:value="${shouhin.sid}">
+商品名：<input type="text" name="sname"  th:value="${shouhin.sname}"><br>
+単価：<input type="text" name="tanka"  th:value="${shouhin.tanka}"><br>
+<input type="submit" value="変更">
+</form>
+
+</body>
+</html>
